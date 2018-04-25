@@ -18,14 +18,17 @@ var handler = Handler.prototype;
  * @param {Function} next next stemp callback
  *
  */
-handler.queryEntry = function(msg, session, next) {
+handler.entry = function(msg, session, next) {
     var uid = msg.uid;
     if(!uid) {
+        var loginServers = app.GetCfgServers('login');
+
         next(null, {
             code: 500
         });
         return;
     }
+
     // get all connectors
     var connectors = this.app.getServersByType('connector');
     if(!connectors || connectors.length === 0) {
