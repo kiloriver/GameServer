@@ -1,13 +1,13 @@
 [
   {
-    "id": "user-1",
+    "id": "administrator",
     "username": "admin",
     "password": "admin",
     "level": 1
   },
   
   {
-    "id": "user-2",
+    "id": "monitor",
     "username": "monitor",
     "password": "monitor",
     "level": 2
