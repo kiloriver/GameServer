@@ -1,18 +1,11 @@
 {
   "dev": {
-    "id": "master-server-1", "host": "127.0.0.1", "port": 3005
-  },
-  "yd": {
-    "id": "yd",
-    "host": "10.26.67.104",
+    "id": "dev",
+    "host": "127.0.0.1",
     "port": 3005,
-    "tableid7": true,
-    "redis": "",
-    "redisDB": 1,
-    "logDBUrl":"",
-    "userDBUrl":"",
-    "gameDBUrl":"",
-    "lobbyDBUrl":""
+    "redis": "127.0.0.1",
+    "bindPlayerCacheTime": 10,
+    "redisDB":2,
+    "DbLogUrl":"mongodb://127.0.0.1:27017/devlog"
   }
-
 }

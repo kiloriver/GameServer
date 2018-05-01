@@ -1,5 +1,25 @@
 [{
-    "type": "connector",
+    "type": "conn",
     "token": "agarxhqb98rpajloaxn34ga8xrunpagkjwlaw3ruxnpaagl29w4rxn"
-}
+},
+    {
+        "type":"login",
+        "token":"50982bdf-c756-4759-ac83-d704a1c27cf1"
+    },
+    {
+        "type":"room",
+        "token":"f71bccb6-811d-49de-beda-7800bad643ba"
+    },
+    {
+        "type":"game",
+        "token":"8ff2ddb9-46ce-488a-8d4d-1545ae2da568"
+    },
+    {
+        "type":"lobby",
+        "token":"1ad5ef71-0af2-4de3-8fff-34461b582ff4"
+    },
+    {
+        "type":"player",
+        "token":"12d79740-7e4d-4d41-b82e-0fb0a33f3a7b"
+    }
 ]

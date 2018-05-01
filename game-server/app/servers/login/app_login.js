@@ -1,8 +1,7 @@
+var logger = require('pomelo-logger').getLogger('pomelo', __filename);
+var path = require('path');
+var routor = require("../../../global/routors");
 
-var routor = require('../util/routor')
+module.exports = function (pomelo, app) {
 
-module.exports = function(pomelo,app)
-{
-    var LoginData = require ('../login/LoginData');
-    app.load (LoginData,{});
-}
+};
