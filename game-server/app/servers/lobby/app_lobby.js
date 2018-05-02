@@ -1,8 +1,8 @@
 
 var routor = require('../util/routor')
+var MongoClient = require('mongodb').MongoClient;
 
 module.exports = function(pomelo,app)
 {
-    var LobbyData = require ('../lobby/lobbyData');
-    app.load (LoginData,{});
+    app.db_name = "lobbyDB";
 }
