@@ -54,7 +54,7 @@ app.regEx = {
 app.configure(function () {
     sType = app.getServerType();
     if (sType != 'master')
-        require('./app/servers/' + sType + '/app_' + sType)(pomelo, app, SessionRoute, DirectRoute);
+        require('./app/servers/' + sType + '/app_' + sType)(pomelo, app);
 
     app.set('proxyConfig', {'retryTimes': 0});
 });

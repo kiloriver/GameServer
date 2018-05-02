@@ -5,28 +5,28 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "login0000",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 2010
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "login0001",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 2011
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "login0002",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 2012
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "login0003",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 2013
       }
     ],
@@ -35,14 +35,14 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "player0000",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5030
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "player0001",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5031
       }
     ],
@@ -51,21 +51,21 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "room0000",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5040
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "room0001",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5041
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "room0020",
-        "host": "",
+        "host": "127.0.0.1",
         "instanceType": "club",
         "port": 5060
       },
@@ -73,7 +73,7 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "room0089",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5129,
         "instanceType": "club"
       }
@@ -83,21 +83,21 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "games0000",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5040
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "games0001",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5041
       },
       {
         "restart-force": false,
         "auto-restart": false,
         "id": "games0020",
-        "host": "",
+        "host": "127.0.0.1",
         "instanceType": "club",
         "port": 5060
       },
@@ -105,7 +105,7 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "games0089",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5129,
         "instanceType": "club"
       }
@@ -115,7 +115,7 @@
         "restart-force": false,
         "auto-restart": false,
         "id": "lobby0000",
-        "host": "",
+        "host": "127.0.0.1",
         "port": 5040
       },
       {

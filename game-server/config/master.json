@@ -1,18 +1,5 @@
 {
   "dev": {
     "id": "master-server-1", "host": "127.0.0.1", "port": 3005
-  },
-  "yd": {
-    "id": "yd",
-    "host": "10.26.67.104",
-    "port": 3005,
-    "tableid7": true,
-    "redis": "",
-    "redisDB": 1,
-    "logDBUrl":"",
-    "userDBUrl":"",
-    "gameDBUrl":"",
-    "lobbyDBUrl":""
   }
-
 }
