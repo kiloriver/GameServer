@@ -14,7 +14,7 @@ var sync = require('pomelo-sync-plugin');
  * Init app for client
  */
 var app = pomelo.createApp();
-app.set('name', 'lord of pomelo');
+app.set('name', 'GameServer');
 
 // configure for global
 app.configure('production|development', function() {
@@ -88,22 +88,7 @@ app.configure('production|development', 'area', function(){
     }else{
         scene.init(dataApi.area.findById(server.area));
         app.areaManager = scene;
-        /*
-         kill -SIGUSR2 <pid>
-         http://localhost:3272/inspector.html?host=localhost:9999&page=0
-        */
-        /*
-        // disable webkit-devtools-agent
-        var areaId = parseInt(server.area);
-        if(areaId === 3) { // area-server-3
-          require('webkit-devtools-agent');
-          var express = require('express');
-          var expressSvr = express.createServer();
-          expressSvr.use(express.static(__dirname + '/devtools_agent_page'));
-          var tmpPort = 3270 + areaId - 1;
-          expressSvr.listen(tmpPort);
-        }
-        */
+
     }
 
     //Init areaService

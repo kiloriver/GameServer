@@ -1,9 +1,6 @@
 [
-  ["编号", "类型"],
-  ["id", "teamName"],
-  ["1", "Gone With the Wind"],
-  ["2", "Casablanca"],
-  ["3", "Pirates of the Caribbean"],
-  ["4", "The Lord of the Rings"],
-  ["5", "The Fast and the Furious"]
+  ["编号", "类型","购买费用"],
+  ["id", "fare_kind","fee"],
+  ["1", "free",0],
+  ["2", "money",88]
 ]

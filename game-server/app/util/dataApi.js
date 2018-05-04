@@ -1,8 +1,8 @@
 // require json files
 var club = require('../../config/data/club');
-var task = require('../../config/data/task');
-var room = require('../../config/data/team');
-var user =
+//var task = require('../../config/data/task');
+var room = require('../../config/data/room');
+//var user = require('../../config/data/user');
 
 /**
  * Data model `new Data()`
@@ -110,15 +110,6 @@ Data.prototype.all = function() {
 };
 
 module.exports = {
-    area: new Data(area),
-    character: new Data(character),
-    equipment: new Data(equipment),
-    experience: new Data(experience),
-    npc: new Data(npc),
-    role: new Data(role),
-    talk: new Data(talk),
-    item: new Data(item),
-    fightskill: new Data(fightskill),
-    task: new Data(task),
-    team: new Data(team)
+    rooms: new Data(room),
+    clubs: new Data(club)
 };
