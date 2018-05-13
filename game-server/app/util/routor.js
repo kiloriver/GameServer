@@ -1,12 +1,73 @@
-
+var Code = require('./code');
+var dispatcher = require('../../../util/dispatcher');
 //
 var exp = module.exports;
 exp.club = function(session, msg, app, cb) {
-    var serverId = session.get('serverId');
+    var serverId = session.get('club');
+    if(!serverId) {
+        var clubid = msg.clubid;
+        if(clubid){
+            var clubs = this.app.getServersByType('club');
+            if(!clubs || clubs.length === 0) {
+                next(null, {code: Code.CLUB.FA_NO_CLUB_AVAILABLE});
+                return;
+            }
+            var res = dispatcher.dispatch(clubid, clubs);
+            session.set('club',res);
+            next(null, {code: Code.OK, host: res.host, port: res.clientPort});
+
+        }else{
+            cb(new Error('can not find server info for type: ' + msg.serverType));
+
+        }
+    }
+
+    cb(null, serverId);
+};
+
+exp.player = function(session, msg, app, cb) {
+    var serverId = session.get('player');
 
     if(!serverId) {
-        cb(new Error('can not find server info for type: ' + msg.serverType));
-        return;
+        var uid = msg.uid;
+        if(uid){
+            var players = this.app.getServersByType('player');
+            if(!players || players.length === 0) {
+                next(null, {code: Code.PLAYER.FA_NO_PLAYER_AVAILABLE});
+                return;
+            }
+            var res = dispatcher.dispatch(uid, players);
+            session.set('player',res);
+            next(null, {code: Code.OK, host: res.host, port: res.clientPort});
+
+        }else{
+            cb(new Error('can not find server info for type: ' + msg.serverType));
+
+        }
+    }
+
+    cb(null, serverId);
+};
+
+exp.game = function(session, msg, app, cb) {
+    var serverId = session.get('game');
+
+    if(!serverId) {
+        var tableid = msg.tableid;
+        if(tableid){
+            var players = this.app.getServersByType('game');
+            if(!players || players.length === 0) {
+                next(null, {code: Code.PLAYER.FA_NO_PLAYER_AVAILABLE});
+                return;
+            }
+            var res = dispatcher.dispatch(uid, players);
+            session.set('game',res);
+            next(null, {code: Code.OK, host: res.host, port: res.clientPort});
+
+        }else{
+            cb(new Error('can not find server info for type: ' + msg.serverType));
+
+        }
     }
 
     cb(null, serverId);

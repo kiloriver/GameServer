@@ -46,7 +46,7 @@
         "port": 5031
       }
     ],
-    "room": [
+    "club": [
       {
         "restart-force": false,
         "auto-restart": false,
@@ -110,38 +110,7 @@
         "instanceType": "club"
       }
     ],
-    "lobby": [
-      {
-        "restart-force": false,
-        "auto-restart": false,
-        "id": "lobby0000",
-        "host": "127.0.0.1",
-        "port": 5040
-      },
-      {
-        "restart-force": false,
-        "auto-restart": false,
-        "id": "lobby0001",
-        "host": "",
-        "port": 5041
-      },
-      {
-        "restart-force": false,
-        "auto-restart": false,
-        "id": "lobby0020",
-        "host": "",
-        "instanceType": "club",
-        "port": 5060
-      },
-      {
-        "restart-force": false,
-        "auto-restart": false,
-        "id": "lobby0089",
-        "host": "",
-        "port": 5129,
-        "instanceType": "club"
-      }
-    ],
+
     "connector": [
       {
         "restart-force": false,
