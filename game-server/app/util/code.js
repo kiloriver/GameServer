@@ -3,9 +3,8 @@ module.exports = {
     FAIL: 500,
 
     LOGIN: {
-        FA_TOKEN_INVALID: 	1001,
-        FA_TOKEN_EXPIRE: 	1002,
-        FA_USER_NOT_EXIST: 	1003
+        FA_NO_LOGIN_AVAILABLE: 1001,
+        FA_USER_NOT_EXIST: 	1002
     },
 
     CLUB: {

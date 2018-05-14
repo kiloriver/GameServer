@@ -7,7 +7,7 @@ exp.club = function(session, msg, app, cb) {
     if(!serverId) {
         var clubid = msg.clubid;
         if(clubid){
-            var clubs = this.app.getServersByType('club');
+            var clubs = app.getServersByType('club');
             if(!clubs || clubs.length === 0) {
                 next(null, {code: Code.CLUB.FA_NO_CLUB_AVAILABLE});
                 return;
@@ -31,7 +31,7 @@ exp.player = function(session, msg, app, cb) {
     if(!serverId) {
         var uid = msg.uid;
         if(uid){
-            var players = this.app.getServersByType('player');
+            var players = app.getServersByType('player');
             if(!players || players.length === 0) {
                 next(null, {code: Code.PLAYER.FA_NO_PLAYER_AVAILABLE});
                 return;
@@ -55,7 +55,7 @@ exp.game = function(session, msg, app, cb) {
     if(!serverId) {
         var tableid = msg.tableid;
         if(tableid){
-            var players = this.app.getServersByType('game');
+            var players = app.getServersByType('game');
             if(!players || players.length === 0) {
                 next(null, {code: Code.PLAYER.FA_NO_PLAYER_AVAILABLE});
                 return;
@@ -85,4 +85,32 @@ exp.connector = function(session, msg, app, cb) {
     }
 
     cb(null, session.frontendId);
+};
+exp.login = function(session,msg,app,cb){
+    var serverId = session.get('login');
+    if(serverId){
+        cb(null, serverId);
+        return;
+    }
+
+    var logins = app.getServersByType('login');
+    if(!logins || logins.length === 0) {
+        cb(null, {code: Code.LOGIN.FA_NO_LOGIN_AVAILABLE});
+        return;
+    }
+    var res = null;
+    var uid = msg.uid;
+    if(!uid) {
+        var r = (Math.floor(Math.random() * 1000));
+        res = logins[ r % logins.length];
+    }else{
+        res = dispatcher.dispatch(uid, logins);
+    }
+
+    session.set('login',res);
+    cb(null, {code: Code.OK, host: res.host, port: res.clientPort});
+
+
+
+
 };

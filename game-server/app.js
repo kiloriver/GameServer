@@ -1,12 +1,7 @@
 var pomelo = require('pomelo');
 var clubService = require('./app/servers/club/service');
-// var instanceManager = require('./app/services/instanceManager');
-// var scene = require('./app/domain/area/scene');
-// var instancePool = require('./app/domain/area/instancePool');
 var dataApi = require('./app/util/dataApi');
 var routeUtil = require('./app/util/routor');
-//var playerFilter = require('./app/servers/area/filter/playerFilter');
-// var ChatService = require('./app/services/chatService');
 var sync = require('pomelo-sync-plugin');
 // var masterhaPlugin = require('pomelo-masterha-plugin');
 
@@ -52,6 +47,7 @@ app.configure('production|development', function() {
     });
 
     // route configures
+    app.route('login', routeUtil.login);
     app.route('club', routeUtil.club);
     app.route('game', routeUtil.game);
     app.route('player', routeUtil.player);
