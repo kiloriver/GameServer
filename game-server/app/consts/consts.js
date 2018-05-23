@@ -23,6 +23,24 @@ module.exports = {
     MYSQL : {
         ERROR_DUP_ENTRY	: 1062
     },
+    REDIS:{
+        NoRedis: 2001,
+    },
+    MONGO:{
+        NoMongo: 3001,
+    },
+    Collection:{
+        USER_TABLE:"userTable",
+    },
+    Keyword:{
+        UniqueUID:"user.uids",
+        IDPlayers:"uid",
+        MailPlayers:"mail",
+        MobilePlayers:"mobile",
+        Hash:"hash"
+
+
+    },
 
     PLAYER : {
         initAreaId : 1,
