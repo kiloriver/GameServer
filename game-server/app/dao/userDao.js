@@ -103,8 +103,7 @@ userDao.loadUserFromMongoDB = function (condition) {
     return new Promise((resolve, reject) => {
         const mongodb = pomelo.app.get("mongo");
         if(mongodb){
-            mongodb.acquire().then(connection => {
-                connection.collection(collectionName).findOne(condition).then(data => {
+                mongodb.collection(collectionName).findOne(condition).then(data => {
                     logger.trace("loadUserFromMongodb %j result: %j", condition, data);
                     resolve(data);
                     mongodb.release(connection);
@@ -112,8 +111,6 @@ userDao.loadUserFromMongoDB = function (condition) {
                     logger.warn("loadUserFromMongodb %j failed by %s", condition, err.message);
                     reject(err);
                     mongodb.release(connection);
-                });
-
             }).catch(reject);
         }else{
             reject(constant.MONGO.NoMongo);
@@ -133,11 +130,9 @@ userDao.updateUser2MongoDB = function (user) {
     return new Promise((resolve, reject) => {
         const mongodb = pomelo.app.get("mongo");
         if(mongodb){
-            mongodb.acquire().then(connection => {
-                connection.collection(collectionName).updateOne({uid: user.uid}, user, {upsert: true}).then(resolve).catch(err => {
-                    logger.warn('updateUser2MongoDB %j failed by %s', user, err.message);
-                    mongodb.release(connection);
-                });
+            connection.collection(collectionName).updateOne({uid: user.uid}, user, {upsert: true}).then(resolve).catch(err => {
+                logger.warn('updateUser2MongoDB %j failed by %s', user, err.message);
+                mongodb.release(connection);
             }).catch(reject);
         }else{
             reject(constant.MONGO.NoMongo);
